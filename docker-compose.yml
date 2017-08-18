@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  application:
+    image: debian
+    volumes:
+      - ./:/var/www/app
+  nginx:
+    image: dung13890/nginx-env
+    restart: always
+    volumes_from:
+      - application
+    tty: true
+    command: /bin/bash -c "/serve.sh 127.0.0.1 laravel /var/www/app && nginx"
+
+
