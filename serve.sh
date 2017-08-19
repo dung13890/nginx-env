@@ -29,6 +29,7 @@ block="server {
         include fastcgi_params;
         fastcgi_pass php-upstream;
         fastcgi_index index.php;
+        fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
         internal;
     }
     location ~ /\.ht {
