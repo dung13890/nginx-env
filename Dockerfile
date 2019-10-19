@@ -5,6 +5,7 @@ MAINTAINER Dao Anh Dung <dung13890@gmail.com>
 ENV TERM xterm
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY serve.sh /serve.sh
+RUN rm /etc/nginx/conf.d/default.conf
 RUN chmod +x /*.sh
 RUN usermod -u 1000 www-data
 
