@@ -8,9 +8,9 @@ upstream="upstream php-upstream {
 echo "$upstream" > "/etc/nginx/conf.d/upstream.conf"
 
 block="server {
-    listen 80;
     server_name $2;
-    root $3;
+    listen $3;
+    root $4;
 
     index index.html index.htm index.php;
     charset utf-8;
